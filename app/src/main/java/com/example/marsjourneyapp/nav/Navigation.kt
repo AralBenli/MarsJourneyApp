@@ -18,6 +18,5 @@ class Action(navController: NavController){
     val manifest : (roverName : String) -> Unit =
         { roverName ->
             navController.navigate("manifest/${roverName}")
-
         }
 }
