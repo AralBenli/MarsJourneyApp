@@ -13,16 +13,13 @@ import javax.inject.Inject
 
 class MarsRoverManifestRepo @Inject constructor(
     private val marsRoverManifestService: MarsRoverManifestService
-){
-    fun getMarsRoverManifest(roverName: String) : Flow<RoverManifestUiState> = flow {
+) {
+    fun getMarsRoverManifest(roverName: String): Flow<RoverManifestUiState> = flow {
         try {
-            toUiModel(
-                marsRoverManifestService.getMarsRoverManifest(
-                    roverName.lowercase()
-                )
-            )
-
-        }catch (throwable : Throwable){
+            val remoteModel = marsRoverManifestService.getMarsRoverManifest(roverName.lowercase())
+            val uiModel = toUiModel(remoteModel)
+            emit(uiModel)
+        } catch (throwable: Throwable) {
             emit(RoverManifestUiState.Error)
         }
     }

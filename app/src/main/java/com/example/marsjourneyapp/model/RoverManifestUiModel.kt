@@ -6,7 +6,7 @@ package com.example.marsjourneyapp.model
 
 sealed class RoverManifestUiState{
     data class Success(
-        val roverManifestUiModel: List<RoverManifestUiModel>
+        val roverManifestUiModelList: List<RoverManifestUiModel>
     ) : RoverManifestUiState()
     object Loading : RoverManifestUiState()
     object Error : RoverManifestUiState()
@@ -22,4 +22,6 @@ data class RoverManifestUiModel (
     : Comparable<RoverManifestUiModel> {
     override fun compareTo(other: RoverManifestUiModel): Int = other.earthDate.compareTo(this.earthDate)
 }
+
+
 

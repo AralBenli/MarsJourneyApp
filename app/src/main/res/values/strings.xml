@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MarsJourneyApp</string>
+    <string name="sol">Sol: %s</string>
+    <string name="earth_date">Earth date: %s</string>
+    <string name="number_of_photo">Number of photo: %s</string>
+    <string name="error">error</string>
+    <string name="loading">loading</string>
 </resources>

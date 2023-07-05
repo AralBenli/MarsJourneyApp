@@ -1,6 +1,7 @@
 package com.example.marsjourneyapp.di
 
 import com.example.marsjourneyapp.api.MarsRoverManifestService
+import com.example.marsjourneyapp.api.MarsRoverPhotoService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +16,10 @@ import dagger.hilt.components.SingletonComponent
 object AppModule {
 
     @Provides
-    fun providesMarsRoverManifestService() : MarsRoverManifestService =
+    fun provideMarsRoverManifestService(): MarsRoverManifestService =
         MarsRoverManifestService.create()
+
+    @Provides
+    fun provideMarsRoverPhotoService(): MarsRoverPhotoService =
+        MarsRoverPhotoService.create()
 }
